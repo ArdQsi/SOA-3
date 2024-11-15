@@ -19,7 +19,7 @@ const CreatePerson = () => {
     const handleCountSubmit = async (e) => {
         e.preventDefault();
 
-        axios.get(`http://localhost:8598/persons/count/less/${eyeColor}`)
+        axios.get(`https://localhost:8080/persons/count/less/${eyeColor}`)
             .then(function (response) {
                 setError(null)
                 setAmount(response.data)

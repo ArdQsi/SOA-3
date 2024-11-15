@@ -33,7 +33,7 @@ public class PersonRepository {
     HttpClient httpClient = HttpClient.create().secure(t -> t.sslContext(context));
 
     private final WebClient webClient = WebClient.builder().clientConnector(new ReactorClientHttpConnector(httpClient))
-            .baseUrl("https://localhost:8598/person-service-1.0-SNAPSHOT").build();
+            .baseUrl("https://localhost:8080").build();
 
     public PersonRepository() throws SSLException {
     }

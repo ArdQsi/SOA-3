@@ -57,7 +57,7 @@ const UpdatePerson = () => {
             },
         };
 
-        axios.put(`http://localhost:8598/persons/${id}`, updatePerson)
+        axios.put(`https://localhost:8300/persons/${id}`, updatePerson)
             .then(function (response) {
                 setError(null)
                 setInfo("The update was successful.")

@@ -1,17 +1,32 @@
 server:
-  port: 8598
-spring:
-  datasource:
-    url:
-    driver-class-name: org.postgresql.Driver
-    username:
-    password:
+  port: 8081
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: ***
+    key-store-type: PKCS12
+    key-alias: tomcat
 
+spring:
   application:
     name: person-microservice
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        health-check-tls-skip-verify: true
+        health-check-url: https://localhost:${server.port}/actuator/health
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    username: *
+    password: *
+
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:

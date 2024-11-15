@@ -74,7 +74,7 @@ const FilterPerson = () => {
     const handleFilterMainSubmit = async (e) => {
         e.preventDefault();
 
-        const url = new URL("http://localhost:8598/persons/filter");
+        const url = new URL("https://localhost:8080/persons/filter");
         url.searchParams.append("page-number", pageNumber);
         url.searchParams.append("page-size", pageSize);
         if (id) url.searchParams.append("id", id);
@@ -122,8 +122,8 @@ const FilterPerson = () => {
                 <InputField name="Location Y" value={locationY} type="number" step="0.01" setState={setLocationY} required={false} />
                 <InputField name="Location Z" value={locationZ} type="number" step="0.01" setState={setLocationZ} required={false} />
                 <button type="submit" onClick={handleFilterMainSubmit}>Filter persons</button>
-                <button type="submit" onClick={(event) => handleFilterEyeColorSubmit(event, `http://localhost:8598/persons/filter/less/${eyeColor}`)}>Filter persons with eye color less than {eyeColor}</button>
-                <button type="submit" onClick={(event) => handleFilterHeightSubmit(event, `http://localhost:8598/persons/filter/more/${height}`)}>Filter persons with height greater than {height}</button>
+                <button type="submit" onClick={(event) => handleFilterEyeColorSubmit(event, `https://localhost:8080/persons/filter/less/${eyeColor}`)}>Filter persons with eye color less than {eyeColor}</button>
+                <button type="submit" onClick={(event) => handleFilterHeightSubmit(event, `https://localhost:8080/persons/filter/more/${height}`)}>Filter persons with height greater than {height}</button>
             </form>
 
             {error ? <div className='error'> {error} </div > :

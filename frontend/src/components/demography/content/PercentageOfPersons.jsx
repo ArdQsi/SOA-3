@@ -19,7 +19,7 @@ const PercentageOfPersons = () => {
     const handleCountSubmit = async (e) => {
         e.preventDefault();
 
-        axios.get(`https://localhost:8444/demography/${eyeColor}/percentage`)
+        axios.get(`https://localhost:8400/demography/${eyeColor}/percentage`)
             .then(function (response) {
                 setPercentage(response.data.percentage)
                 setError(null)

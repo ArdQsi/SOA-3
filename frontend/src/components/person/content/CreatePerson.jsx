@@ -56,7 +56,7 @@ const CreatePerson = () => {
             },
         };
 
-        axios.post('http://localhost:8598/persons', newPerson)
+        axios.post('https://localhost:8080/persons', newPerson)
             .then(function (response) {
                 setError(null)
                 setInfo("Creation is successful")

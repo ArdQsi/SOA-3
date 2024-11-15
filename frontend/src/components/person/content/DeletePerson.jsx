@@ -11,7 +11,7 @@ const DeletePerson = () => {
     const handleDeleteSubmit = async (e) => {
         e.preventDefault();
 
-        axios.delete(`http://localhost:8598/persons/${id}`)
+        axios.delete(`https://localhost:8080/persons/${id}`)
             .then(function (response) {
                 setInfo(response.data)
                 setError(null)
